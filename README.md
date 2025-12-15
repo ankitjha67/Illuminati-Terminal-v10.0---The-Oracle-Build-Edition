@@ -1,123 +1,122 @@
 # Illuminati-Terminal-v10.0---The-Oracle-Build-Edition
 
 👁️ Illuminati Terminal
-The "Hedge Fund in a Box" – An Autonomous AI Market Intelligence System.
-
-Illuminati Terminal is an advanced Python-based market scanner that automates the entire workflow of a quantitative analyst. It aggregates unstructured data (News/RSS), processes it with Natural Language Processing (NLP), maps it to financial assets, performs deep fundamental and technical analysis, and uses Generative AI (Google Gemini) to produce professional investment memos.
+The "Hedge Fund in a Box" – Autonomous AI Market Intelligence System
+Illuminati Terminal is an advanced, Python-based financial analytics suite designed to automate the daily workflow of a quantitative analyst. It aggregates unstructured news data, performs deep fundamental and technical valuations on Indian equities (NSE), and uses Generative AI (Google Gemini) to produce institutional-grade investment strategies.
 
 🚀 Key Features
 1. 🧠 AI-Powered "Trend Hunter" Engine
-Instead of just reading stock prices, the terminal "reads" the news to predict the future.
+Instead of reacting to price moves, the terminal reads the news to predict future sector rotation.
 
-Semantic Scanning: It scans thousands of headlines from Economic Times, Reuters, Bloomberg, and Livemint.
+Semantic Scanning: Asynchronously scans thousands of headlines from Economic Times, Reuters, Bloomberg, Livemint, and a custom Google News Proxy (to catch live updates from Moneycontrol).
 
-Hype Scoring: It detects emerging themes like "Green Hydrogen", "Defense", or "Semiconductors" by analyzing keyword density and sentiment momentum.
+Hype Scoring: Detects emerging macroeconomic themes (e.g., "Green Hydrogen," "Defense," "Semiconductors") by analyzing keyword density across millions of data points.
 
-Output: It generates a "Future Booming Industries" table, telling you where the money is flowing before the price moves.
+Output: Generates a "Future Booming Industries" table, quantifying which sectors are capturing the narrative market share.
 
 2. 🛡️ Self-Healing Architecture
-Designed to run on any machine (Local PC, Google Colab, Cloud Server) without breaking.
+Built for stability across any environment (Local PC, Cloud Server, Google Colab).
 
-Auto-Installer: Automatically detects missing libraries (nselib, trafilatura, yfinance) and installs them on the fly.
+Auto-Dependency Resolution: On startup, the script performs a self-diagnostic. If libraries like nselib, trafilatura, or yfinance are missing, it automatically installs them without user intervention.
 
-API Resilience: If the Gemini AI model fails (e.g., gemini-1.5-flash 404 error), it automatically retries with gemini-pro or gemini-1.0 until it works.
+AI Fallback Matrix: If the primary Google Gemini model fails (e.g., 404 error), the system instantly reroutes the request to backup models (gemini-1.5-pro → gemini-pro → gemini-1.0) to ensure you always get your analysis.
 
-Database Hygiene: Automatically cleans old SQLite schemas to prevent data corruption errors.
+Database Hygiene: Automatically manages and cleans SQLite schemas to prevent data corruption during upgrades.
 
-3. 🌊 Waterfall Data Engine
-Ensures you never get "No Data" errors. The system fetches price data using a sophisticated fallback mechanism:
+3. 📊 "Omniscient" Analysis Lab
+The core valuation engine that fuses three distinct disciplines into a single "Illuminati Score" (0-100):
 
-TwelveData (Primary): Professional-grade real-time data (if API key provided).
+Deep Fundamentals: Calculates the Intrinsic Value using a Discounted Cash Flow (DCF) model. If cash flow data is sparse, it intelligently switches to a Graham/PE-based valuation.
 
-AlphaVantage (Secondary): Backup source for adjusted close prices.
+Deep Technicals: Analyzes trend structure (SMA50/SMA200), Momentum (RSI, MACD), and Volatility (Bollinger Bands, ATR).
 
-Yahoo Finance (Tertiary): Reliable fallback for historical data and fundamentals.
+Risk Metrics: Computes institutional risk ratios (Sharpe Ratio, Sortino Ratio, Max Drawdown) to penalize volatile assets even if they are trending up.
 
-4. 📊 "Omniscient" Analysis Lab
-The core engine that crunches the numbers. It combines three distinct disciplines into one "Illuminati Score":
+Stress Testing: Simulates portfolio performance under specific macroeconomic shocks (e.g., "Oil Price Shock" for energy stocks).
 
-Deep Technicals: Calculates RSI, MACD (Moving Average Convergence Divergence), Bollinger Bands, and identifying Uptrend/Downtrend structures.
+4. ⚖️ Balanced "Bearish" Logic
+Unlike simple screeners that only look for buys, Illuminati v16.0 acts as a risk manager.
 
-Deep Fundamentals: Performs a Discounted Cash Flow (DCF) valuation to find the Intrinsic Value of a stock. If cash flow data is missing, it intelligently falls back to a PE-based valuation model.
+Punitive Scoring: The algorithm actively subtracts points for red flags (e.g., -20 for Downtrend, -15 for Overbought RSI, -10 for Overvaluation).
 
-Risk Metrics: Calculates the Sharpe Ratio (Reward vs. Risk), Sortino Ratio, and Max Drawdown to punish volatile stocks.
+Dual Reporting: Clearly separates the market into 🚀 Top Opportunities (Buys) and ⚠️ Warnings & Exits (Sells), helping you protect capital as well as grow it.
 
-5. ⚖️ "Bearish Logic" & Strategic Verdict
-Most algo-traders are too optimistic. Illuminati v14.0 is a realist.
+5. 📝 Executive Reporting Suite
+Delivers insights in every format you need:
 
-Punitive Scoring: It doesn't just award points for good traits; it subtracts points for red flags (e.g., -20 for Downtrend, -15 for Overbought RSI).
+Interactive HTML Dashboard: A searchable, filterable web report containing news feeds, strategy tables, and sector heatmaps.
 
-Clear Signals: It sorts stocks into Top Buys (Opportunities) and Top Sells (Warnings) tables so you know what to avoid.
+Excel Strategy Sheet: A raw data file for further quantitative modeling.
 
-Target Prices: It calculates precise price targets and time horizons (e.g., "Mid Term (3-6 Mos)") based on the volatility and valuation gap.
+Full Deep Dive (Text File): A transparent "math receipt" for every single stock analyzed, showing the exact formula used to derive its Target Price and Score.
 
-6. 📝 Executive Reporting Suite
-It generates institutional-quality reports automatically.
-
-Interactive HTML Dashboard: A searchable, filterable web report containing all news, trends, and strategy tables.
-
-Excel Strategy Sheet: A raw data file for further analysis.
-
-Deep Dive Text File: A transparent "math receipt" showing exactly how the target price and score for every single stock was calculated.
-
-Auto-Emailer: Sends the entire briefing package to your inbox automatically after every run (requires Gmail App Password).
+Auto-Emailer: Packages all reports and sends an Executive Briefing to your inbox automatically after every run.
 
 ⚙️ How It Works in Real Life (The Workflow)
-Imagine you set this script to run at 08:00 AM every morning. Here is the autonomous sequence it follows:
+Imagine running this script at 08:00 AM before the market opens. Here is the autonomous sequence it executes:
 
-Wake Up & Self-Check: The script starts, checks if it has all the necessary Python libraries (pandas, ta, transformers), and installs any that are missing.
+The Wake-Up & Self-Check: The script initializes, verifies its environment, and auto-installs any missing dependencies. It connects to the database and cleans up old temporary files.
 
-The "Wide Net" Cast: It connects to 8+ global RSS feeds and scrapes Google News for "Indian Stock Market" keywords. It reads the last 7 days of news to ensure relevance.
+The "Wide Net" Cast (Data Ingestion):
 
-Entity Resolution: It reads the headlines (e.g., "Tata Motors plans new EV plant"). The MasterMapper engine recognizes "Tata Motors" and maps it to the ticker TATAMOTORS.NS using the full NSE database.
+It triggers an asynchronous crawler that hits 8+ global financial feeds simultaneously.
 
-The Analysis Crunch:
+It scrapes the full body text of articles (not just headlines) to understand context.
 
-It pulls the last 1 year of price data for TATAMOTORS.
+Entity Resolution: It reads a headline like "Tata Motors plans new EV gigafactory" and uses the nselib database to map "Tata Motors" to the specific ticker TATAMOTORS.NS.
 
-Technicals: It sees the stock is above its 200-day moving average (+20 Points).
+The Analysis Crunch (The "Brain"):
 
-Fundamentals: It sees the stock is trading at ₹900 but the DCF Fair Value is ₹1,100 (+20 Points).
+For every identified ticker, it pulls real-time price data via a Waterfall Engine (trying TwelveData first for precision, falling back to Yahoo Finance).
 
-Verdict: It assigns a score of 80/100 and a label of "STRONG BUY".
+It runs the DCF Valuation to see if the stock is cheap.
 
-The "AI Analyst" (Gemini): The system sends this data to Google's Gemini AI. The AI writes a human-readable summary: "Tata Motors shows strong momentum driven by EV expansion news. Technicals confirm a breakout..."
+It runs the Technical Scanner to see if the stock is moving.
 
-Dispatch: It packages the results into an HTML dashboard and an Excel sheet, attaches them to an email, and sends it to you.
+It calculates the Sharpe Ratio to see if the stock is risky.
 
-Result: You wake up, check your phone, and have a complete hedge fund briefing before the market opens.
+Result: It determines TATAMOTORS is a "STRONG BUY" with a target of ₹1,250 based on a 15% undervaluation and strong momentum. Conversely, it marks WIPRO as a "SELL" due to declining momentum and overvaluation.
 
-🛠️ Setup Guide
-1. Prerequisites
-You need a Google account (for Colab) or a Python environment (VS Code/PyCharm).
+The AI Analyst (Generative Insight): The system feeds the raw data tables into Google Gemini. The AI writes a human-readable summary, explaining why certain sectors are popping and connecting the dots between news (e.g., "Semiconductor incentives") and stock picks.
 
-2. API Keys (Optional but Recommended)
-For the full experience, get these free keys:
+The Dispatch:
 
-Gemini API Key: Get it here (For AI Summaries).
+It saves a .xlsx file for your records.
 
-TwelveData Key: Get it here (For faster data).
+It generates a .html dashboard for quick viewing.
 
-3. Running in Google Colab (Easiest)
-Open the script in Google Colab.
+It compiles a Deep_Dive.txt file proving its math.
 
-Press Play.
+Final Step: It emails this entire package to your phone.
 
-The script will detect it's in Colab and prompt you to enter your keys interactively.
+The Result: You start your trading day with a complete, mathematically rigorous hedge fund briefing—generated entirely while you were getting coffee.
 
-Sit back and watch the "Illuminati" scan the market.
-
-4. Running Locally (VS Code / Terminal)
-Install the dependencies once (the script will try to do this for you, but good practice):
+🛠️ Installation
+1. Clone the Repository
 
 Bash
 
-pip install yfinance pandas numpy requests feedparser tabulate reportlab nltk transformers schedule google-generativeai aiohttp xlsxwriter trafilatura rapidfuzz beautifulsoup4 ta jinja2 textblob nest_asyncio
-Run the script:
+git clone https://github.com/yourusername/illuminati-terminal.git
+cd illuminati-terminal
+2. Install Dependencies (The script handles this automatically, but you can do it manually):
 
 Bash
 
-python illuminati_terminal.py
-Interactive Mode: python illuminati_terminal.py --interactive
+pip install -r requirements.txt
+3. Set Up API Keys (Optional but Recommended) You can run the script interactively and enter keys when prompted, or set them as environment variables:
 
-Scheduler Mode: python illuminati_terminal.py --schedule (Runs daily at 08:00 AM).
+GEMINI_API_KEY: For AI narratives.
+
+TWELVEDATA_KEY: For premium data feeds.
+
+EMAIL_USER / EMAIL_PASS: For the auto-emailer features.
+
+4. Run It
+
+Bash
+
+# Standard interactive mode
+python illuminati_terminal.py --interactive
+
+# Schedule mode (Runs daily at 08:00 AM)
+python illuminati_terminal.py --schedule
